@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>WEB222</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Allerta+Stencil&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://fonts.googleapis.com/css2?family=Sen&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="style.css" type="text/css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="brand">
+        <a href="index.html"> <img src="images/logo.png" alt=""/></a>
+        <a href="index.html"
+          ><div class="title">
+            <h1>Vishisht - Car Dealership</h1>
+            <h2>Find the Car that matches your personality</h2>
+          </div></a
+        >
+      </div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </header>
+
+    <div class="container">
+      <h2>Fill In Your Information</h2>
+
+      <form
+        id="fill-form"
+        name="form"
+        action="https://httpbin.org/post"
+        method="post"
+        class="contact"
+        onsubmit="return formValidation();"
+      >
+        <br />
+
+        <div class="row">
+          <div class="col">
+            <label for="name">Name</label>
+            <input class="form-control" id="name" name="name" type="text" required />
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col">
+            <label for="email">Email</label>
+            <input
+              id="email"
+              class="form-control"
+              name="email"
+              type="email"
+              placeholder="user@example.com"
+              required
+            />
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col">
+            <label for="address"> Address</label>
+            <input id="address" class="form-control" name="address" type="text" required />
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col">
+            <label for="city"> City</label>
+            <input id="city" class="form-control" name="city" type="text" list="cities" required />
+            <datalist id="cities">
+              <option value="Petersburg"> </option>
+              <option value="Toronto"> </option>
+              <option value="Ottawa"> </option>
+              <option value="London"> </option>
+              <option value="Waterloo"> </option>
+            </datalist>
+          </div>
+
+          <div class="col">
+            <label for="postal-code"> Postal Code</label>
+            <input
+              id="postal-code"
+              class="form-control"
+              name="postal-code"
+              type="text"
+              title=" Please enter the valid canada Zip Code "
+              maxlength="8"
+              pattern="^[A-Za-z]\d[A-Za-z][ -]?\d[A-Za-z]\d$"
+              required
+            />
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col">
+            <label class="mr-3">Need Help Regarding :</label>
+
+            <div class="radio">
+              <input
+                class="select"
+                type="radio"
+                name="help"
+                id="help-question"
+                value="question"
+                tabindex="11"
+                onclick="orderNumber()"
+              />
+              <label class="issue" for="help-question">Question</label>
+            </div>
+            <div class="radio">
+              <input
+                class="select"
+                type="radio"
+                name="help"
+                onclick="orderNumber()"
+                id="help-question"
+                value="comment"
+                tabindex="12"
+              />
+              <label class="issue" for="help-question">Comment</label>
+            </div>
+
+            <div class="radio">
+              <input
+                class="select"
+                type="radio"
+                name="help"
+                id="getOrderNum"
+                value="orderProblem"
+                tabindex="13"
+                onclick="orderNumber()"
+              />
+              <label class="issue" for="help-question">Order Problem</label>
+
+              <div class="form-check form-check-inline" id="orderNumber" style="display: none">
+                <p>Enter the order number</p>
+                <input type="text" id="Num" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col">
+            <label for="description">What is your problem?</label>
+            <textarea
+              id="description"
+              class="form-control"
+              name="description"
+              rows="5"
+              tabindex="14"
+              placeholder="Mention your problem here... "
+            ></textarea>
+          </div>
+        </div>
+
+        <div class="buttons">
+          <input class="btn btn-primary" type="submit" name="submit" value="Submit" tabindex="15" />
+          <input
+            class="btn btn-secondary mr-3"
+            type="reset"
+            name="reset"
+            value="Reset"
+            tabindex="16"
+          />
+        </div>
+
+        <input id="hidname" name="hidname" type="hidden" value="Vishisht Gupta" />
+      </form>
+    </div>
+    <footer class="footer">
+      <div class="foot-name"><span>Vishisht - Car Dealership</span> &copy; 2020</div>
+      <div class="sub">
+        <form action="https://formspree.io/moqkbjdz" method="POST">
+          <label><span>Subscribe for Exciting Updates</span></label>
+          <div>
+            <input type="email" placeholder="Enter your email..." required />
+            <button type="submit">Subscribe</button>
+          </div>
+        </form>
+      </div>
+      <div class="socials">
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+        />
+
+        <!-- Add font awesome icons -->
+        <a href="https://www.facebook.com" class="fa fa-facebook"></a>
+        <a href="https://www.twitter.com" class="fa fa-twitter"></a>
+        <a href="https://www.youtube.com" class="fa fa-youtube"></a>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
